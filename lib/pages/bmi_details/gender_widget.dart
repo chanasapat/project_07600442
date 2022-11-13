@@ -12,15 +12,17 @@ class GenderWidget extends StatefulWidget {
 class _GenderWidgetState extends State<GenderWidget> {
   int _gender = 0;
 
-  final ChoiceChip3DStyle selectedStyle = ChoiceChip3DStyle(
+  final ChoiceChip3DStyle selected = ChoiceChip3DStyle(
       topColor: Colors.grey[200]!,
       backColor: Colors.grey,
-      borderRadius: BorderRadius.circular(20));
+      borderRadius: BorderRadius.circular(20)
+  );
 
-  final ChoiceChip3DStyle unselectedStyle = ChoiceChip3DStyle(
+  final ChoiceChip3DStyle unselected = ChoiceChip3DStyle(
       topColor: Colors.white,
       backColor: Colors.grey[300]!,
-      borderRadius: BorderRadius.circular(20));
+      borderRadius: BorderRadius.circular(20)
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class _GenderWidgetState extends State<GenderWidget> {
         children: [
           ChoiceChip3D(
               border: Border.all(color: Colors.cyan),
-              style: _gender == 1 ? selectedStyle : unselectedStyle,
+              style: _gender == 1 ? selected : unselected,
               onSelected: () {
                 setState(() {
                   _gender = 1;
@@ -57,7 +59,7 @@ class _GenderWidgetState extends State<GenderWidget> {
           ),
           ChoiceChip3D(
               border: Border.all(color: Colors.pink),
-              style: _gender == 2 ? selectedStyle : unselectedStyle,
+              style: _gender == 2 ? selected : unselected,
               onSelected: () {
                 setState(() {
                   _gender = 2;
