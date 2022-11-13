@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:project_07600442/pages/bmi_result_page.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:swipeable_button_view/swipeable_button_view.dart';
 
 import 'bmi_details/age_widget.dart';
@@ -80,16 +80,15 @@ class _BMIPageState extends State<BMIPage> {
                                     age: _age,
                                     height: _height,
                                   ),
-                                  type: PageTransitionType.fade));
-
+                                  type: PageTransitionType.fade
+                              )
+                          );
                           setState(() {
                             _isCalculator = false;
                           });
                         },
                         onWaitingProcess: () {
-                          //Calculate BMI here
                           bmiCalculator();
-
                           Future.delayed(Duration(seconds: 1), () {
                             setState(() {
                               _isCalculator = true;

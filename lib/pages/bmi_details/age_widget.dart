@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class AgeWidget extends StatefulWidget {
   final Function(int) onChange;
-
   const AgeWidget({Key? key, required this.onChange,}) : super(key: key);
 
   @override
